@@ -1,0 +1,45 @@
+﻿@model MVC_Blog.Models.Post
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Post</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Zaglavie
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            Tyalo
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Body)
+            @*<textarea disabled="disabled" wors="20"
+                class="forum-control text-box multi-line">@Model.Body</textarea> 
+                 -> tpva trqbvashe da sraboti ot videoto*@
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
